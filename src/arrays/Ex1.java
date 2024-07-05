@@ -1,9 +1,7 @@
 package arrays;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -34,7 +32,7 @@ public class Ex1 {
         System.gc();
 
         st = System.currentTimeMillis();
-        List<Integer> streamlist =  IntStream.range(0, n)
+         IntStream.range(0, n)
                                     .boxed()
                                     .collect(Collectors.toList());
         
