@@ -4,11 +4,14 @@ import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-        int[] arr = {23,23,45,65,76};
+        
+        int[] arr = {23,23,45,65,76,76,56};
+
         List<Integer> array = Arrays.stream(arr)
         .distinct()
         .boxed()
         .collect(Collectors.toList());
+        
         System.out.println(array);
         
     }

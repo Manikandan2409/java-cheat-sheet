@@ -1,7 +1,5 @@
-import java.io.BufferedWriter;
 import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,7 +15,7 @@ public class App {
                 System.out.print((char)i);
                 s+=(char)i;
             }
-            fr.close();;
+            fr.close();
             FileOutputStream fw = new FileOutputStream("./resource/output.txt");
         //    BufferedWriter bw = new BufferedWriter(fw);
            for (char c : s.toCharArray()) {
