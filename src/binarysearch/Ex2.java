@@ -9,8 +9,10 @@ public class Ex2 {
 
         Arrays.sort(arr);
         System.out.println("Sorted array: " + Arrays.toString(arr));
-
+        // Greatest closer  or equal number near to x in  less value
         int floor = findFloor(arr, x);
+
+        //  smallest or equal number near to x which is greater than the value of x
         int ceil = findCeil(arr, x);
 
         if (floor != -1) {

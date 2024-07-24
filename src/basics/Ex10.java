@@ -10,7 +10,7 @@ public class Ex10 {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter a num to find palindrome :) ");
         int n = in.nextInt();
-
+        in.close();
         if (isPalindrome(n))  System.out.println(n+" is Palindrome");
         else System.out.println(n+" is not a Palindrome");   
     

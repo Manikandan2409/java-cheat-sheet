@@ -15,13 +15,10 @@ public class App {
                 System.out.print((char)i);
                 s+=(char)i;
             }
+            System.out.println(s);
             fr.close();
             FileOutputStream fw = new FileOutputStream("./resource/output.txt");
         //    BufferedWriter bw = new BufferedWriter(fw);
-           for (char c : s.toCharArray()) {
-            // bw.append(c);
-            
-           }
            System.out.println("File Writed");
           // bw.close();
            fw.close();

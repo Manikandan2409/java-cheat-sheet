@@ -17,20 +17,25 @@ public class Ex8 {
         List<Integer> primes = new ArrayList<>();
         
         int n = in.nextInt();
-        
-        // for(int i = 2; i <= n; i++) {
-        //     if (isPrime(i)) {
-        //         primes.add(i);
-        //     }
-        // }
+        in.close();
+        long st = System.nanoTime();
+        for(int i = 2; i <= n; i++) {
+            if (isPrime(i)) {
+                primes.add(i);
+            }
+        }
+        long et = System.nanoTime();
+        System.out.println("Loops :"+ (et-st));
     
+        st=System.nanoTime();
         Map<Boolean,List<Integer>>  partitionNumbers = IntStream.rangeClosed(2, n)
         .boxed()
         .collect(Collectors.partitioningBy(num-> isPrimeRecursive(num, 2)));
 
         List<Integer> prime = partitionNumbers.get(true);
         List<Integer> nonprime = partitionNumbers.get(false);
-
+        et = System.nanoTime();
+        System.out.println("Streams :"+ (et-st));
         System.out.println("Prime numbers up to " + n + ": " + prime +" \n "+ nonprime);
     }
 

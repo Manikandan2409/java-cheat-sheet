@@ -7,7 +7,7 @@ public class Ex9 {
     
         System.out.println("Enter a nuber to find a number is armstrong or not :)");
         int n = in.nextInt();
-
+        in.close();
         if (isArmStrong(n)) {
             System.out.println(n+ " is armstrong");
         }else{ System.out.println(n+"  is not an armstrong");}

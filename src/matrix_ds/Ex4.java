@@ -1,5 +1,4 @@
 package matrix_ds;
-import java.util.*;
 import java.io.*;
 //Maximum num of 1's row
 public class Ex4 {

@@ -8,6 +8,7 @@ public class Ex3 {
          Scanner in = new Scanner(System.in);
          System.out.println("Enter a number to find fibonocii :");
          int n = in.nextInt();
+         in.close();
          System.out.println("Fibonocii Series :"+ fibonocii(n));
     }
 

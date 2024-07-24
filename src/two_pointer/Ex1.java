@@ -9,7 +9,7 @@ public class Ex1 {
     pairSum(arr,sum);
     int[] arr1={1, 2, 4, 3, 6};
     sum=10;
-    pairSum(arr,sum);
+    pairSum(arr1,sum);
   }  
   static void pairSum(int[] arr,int x){
     for(int i =0;i< arr.length-1;i++){
