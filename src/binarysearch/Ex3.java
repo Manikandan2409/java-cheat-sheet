@@ -1,31 +1,48 @@
 package binarysearch;
 
-import java.util.ArrayList;
-import java.util.List;
-
-// Find first and last occurence of element in sorted array
 public class Ex3 {
-   public static void main(String[] args) {
-    int[] arr = {2,3,4,56,76,87,54,90,87};
-    int search =87;
-        firstOccurence(arr,search);
-   } 
-   private static  void firstOccurence(int[] arr,int search){
+    public static void main(String[] args) {
+        int[] arr = { 2, 3, 4, 54, 56, 76, 87, 90 };
+        int search = 87;
+        int[] result = firstAndLastOccurrence(arr, search);
+        System.out.println("First occurrence: " + result[0]);
+        System.out.println("Last occurrence: " + result[1]);
+    }
+
+    private static int[] firstAndLastOccurrence(int[] arr, int search) {
+        int first = -1;
+        int last = -1;
+
         int start = 0;
-        int end =arr.length-1;
-        List<Integer> values = new ArrayList<>();
+        int end = arr.length - 1;
+
         while (start <= end) {
             int mid = start + (end - start) / 2;
-            
             if (arr[mid] == search) {
-                values.add(mid);
-                break;
+                first = mid;
+                end = mid - 1;
             } else if (arr[mid] < search) {
                 start = mid + 1;
             } else {
                 end = mid - 1;
             }
         }
-        System.out.println(values);
-   }
+
+        start = 0;
+        end = arr.length - 1;
+
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+            if (arr[mid] == search) {
+                last = mid;
+                start = mid + 1;
+            } else if (arr[mid] < search) {
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+
+        return new int[] { first, last };
+    }
 }
