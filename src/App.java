@@ -1,38 +1,23 @@
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
 
 public class App {
+
     public static void main(String[] args) throws Exception {
-      
-   
-        try {
-           FileReader fr = new FileReader("./resource/test.txt");
-           int i;
-           String s="";
-           while ((i =fr.read()) !=-1) {
-                System.out.print((char)i);
-                s+=(char)i;
-            }
-            System.out.println(s);
-            fr.close();
-            FileOutputStream fw = new FileOutputStream("./resource/output.txt");
-        //    BufferedWriter bw = new BufferedWriter(fw);
-           System.out.println("File Writed");
-          // bw.close();
-           fw.close();
-        } catch (Exception e) {
-           e.printStackTrace();
-        }
 
+        String col = "ABZ";
 
-        Map<String,Integer> hmap = new HashMap<>();
-        hmap.put("1", 1);
-        hmap.put("2", 2);
-        for (Map.Entry<String,Integer> entry : hmap.entrySet()) {
-            System.out.println(entry.getKey()+" "+entry.getValue());
+        int out = 0;
+        
+        for(int i = 0; i < col.length(); i++) {
             
+            char currentChar = col.charAt(i);
+            int value = currentChar - 'A' + 1;
+            out *=26+value;
+        
         }
+
+        System.out.println(out);
+
     }
+
 }

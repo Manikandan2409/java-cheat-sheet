@@ -17,28 +17,37 @@ public class Producer extends Thread {
         return product;
     }
 
+    public void stopProducer() {
+        product.stopProducing();
+    }
+
     static class Product {
         private static int total_product = 0;
         private int id;
         private String name;
+        public String getName() {
+            return name;
+        }
+
         private int produced_size = 0;
         private int quantity;
         private long produce_time = 0;
+        private volatile boolean running = true;
 
         @Override
         public String toString() {
-            return "Product [id=" + id + ", name=" + name + ", produced_size=" + produced_size + ", quantity=" + quantity + ", produce_time=" + produce_time + "]";
+            return "Product [id=" + id + ", name=" + name + ", produced_size=" + produced_size + ", quantity=" + quantity +", status="+running+ "]";
         }
 
         public void produceProduct() {
-            while (true) {
+            while (running) {
                 try {
                     Thread.sleep(produce_time);
                     synchronized (this) {
                         quantity++;
                         produced_size++;
                         System.out.println(this);
-                        notifyAll(); 
+                        notifyAll();
                     }
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -71,7 +80,9 @@ public class Producer extends Thread {
             quantity -= count;
             return true;
         }
-    }
 
-    
+        public void stopProducing() {
+            running = false;
+        }
+    }
 }

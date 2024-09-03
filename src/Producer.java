@@ -18,8 +18,8 @@ public class Producer {
     }
 
     public static void main(String[] args) {
-        Producer p = new Producer("WaterMelon", 1000);
-        Producer s = new Producer("Pomegranate", 2000);
+        Producer p = new Producer("WaterMelon", 2000);
+        Producer s = new Producer("Pomegranate", 3000);
 
         // Simulate consumption
         consumeProduct("WaterMelon", 60);
